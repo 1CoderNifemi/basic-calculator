@@ -3,7 +3,11 @@ const BUTTONS = document.getElementsByClassName("output-btn");
 const equalsBtn = document.getElementById("equals-btn");
 
 const handleButton = (button) => {
-  inputElem.value += button.value;
+  if (inputElem.value === "0" && button.value !== ".") {
+    inputElem.value = button.value;
+  } else {
+    inputElem.value += button.value;
+  }
 };
 Array.from(BUTTONS).forEach((btn) => {
   btn.onclick = () => handleButton(btn);
