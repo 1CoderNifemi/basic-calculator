@@ -5,7 +5,7 @@ const equalsBtn = document.getElementById("equals-btn");
 
 const handleButton = (button) => {
   const result = operatorsArr.every((element) => button.value !== element.value);
-  if (inputElem.value === "0" && result) {
+  if (inputElem.value === "0" && result && button.value !== ".") {
     inputElem.value = button.value;
   } else {
     inputElem.value += button.value;
